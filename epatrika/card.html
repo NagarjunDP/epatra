@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#FAF6EF" id="meta-theme-color">
+  <title>Invitation</title>
+  
+  <link rel="manifest" href="/manifest.json">
+  <link id="theme-stylesheet" rel="stylesheet" href="/styles/themes/ivory.css">
+  <link rel="stylesheet" href="/styles/card.css">
+</head>
+<body>
+  
+  <div id="loading" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="error-screen" class="hidden">
+    <p>Card not found.</p>
+  </div>
+
+  <div class="viewport" id="viewport" style="opacity: 0;">
+    <div class="card-container" id="card-container">
+      
+      <!-- PAGE 4 (RSVP) -->
+      <div class="page" id="page-4" data-index="3">
+        <div class="page-front page-content">
+          <div class="page-texture"></div>
+          <div class="glare"></div>
+          
+          <svg class="watermark" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="var(--accent)" stroke-width="0.5"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="var(--accent)" stroke-width="0.5" stroke-dasharray="2 4"/>
+            <path d="M100 10 L105 40 L100 70 L95 40 Z" fill="var(--accent)"/>
+            <path d="M100 190 L105 160 L100 130 L95 160 Z" fill="var(--accent)"/>
+            <path d="M10 100 L40 105 L70 100 L40 95 Z" fill="var(--accent)"/>
+            <path d="M190 100 L160 105 L130 100 L160 95 Z" fill="var(--accent)"/>
+            <path d="M36 36 L60 50 L84 84 L50 60 Z" fill="var(--accent)"/>
+            <path d="M164 164 L140 150 L116 116 L150 140 Z" fill="var(--accent)"/>
+            <path d="M164 36 L140 50 L116 84 L150 60 Z" fill="var(--accent)"/>
+            <path d="M36 164 L60 150 L84 116 L50 140 Z" fill="var(--accent)"/>
+            <circle cx="100" cy="100" r="20" fill="none" stroke="var(--accent)" stroke-width="1"/>
+            <circle cx="100" cy="100" r="5" fill="var(--accent)"/>
+          </svg>
+
+          <!-- Corners -->
+          <svg class="ornament corner-top-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-top-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+
+          <div class="rsvp-layout">
+            <div class="font-event-title" style="margin-top:20px;">We look forward to <br>celebrating with you</div>
+            <svg class="center-divider" viewBox="0 0 200 20"><line x1="0" y1="10" x2="80" y2="10" stroke="var(--accent)" stroke-width="1"/><circle cx="100" cy="10" r="4" stroke="var(--accent)" fill="none"/><circle cx="100" cy="10" r="1" fill="var(--accent)"/><line x1="120" y1="10" x2="200" y2="10" stroke="var(--accent)" stroke-width="1"/></svg>
+            <div class="font-label">Kindly respond by</div>
+            <div class="font-body" id="card-countdown">Calculating...</div>
+            <div style="flex-grow: 1;"></div>
+            <a href="#" class="action-btn filled" id="action-rsvp">RSVP on WhatsApp</a>
+            <a href="#" class="action-btn hidden" id="action-pay">Send a Gift (UPI)</a>
+            <div style="flex-grow: 1;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 3 (Venue) -->
+      <div class="page" id="page-3" data-index="2">
+        <div class="page-front page-content">
+          <div class="page-texture"></div>
+          <div class="glare"></div>
+          <!-- Corners -->
+          <svg class="ornament corner-top-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-top-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+
+          <!-- Borders -->
+          <svg class="border-band top" preserveAspectRatio="none" viewBox="0 0 400 24"><path d="M0,12 Q10,0 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/><path d="M0,12 Q10,24 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/></svg>
+          <svg class="border-band bottom" preserveAspectRatio="none" viewBox="0 0 400 24"><path d="M0,12 Q10,0 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/><path d="M0,12 Q10,24 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/></svg>
+
+          <div class="details-layout" style="margin-top: 40px;">
+            <div class="font-label">Location</div>
+            <div class="font-event-title" id="card-venue">Raj Mahal Banquet Hall</div>
+            <div class="font-body" id="card-city" style="color: var(--text-secondary);">Andheri East, Mumbai</div>
+            
+            <div class="map-thumbnail"></div>
+            
+            <a href="#" class="action-btn" id="action-map" target="_blank">Get Directions</a>
+          </div>
+        </div>
+        <div class="page-back"></div>
+        <div class="page-shadow"></div>
+      </div>
+
+      <!-- PAGE 2 (Details) -->
+      <div class="page" id="page-2" data-index="1">
+        <div class="page-front page-content">
+          <div class="page-texture"></div>
+          <div class="glare"></div>
+          <!-- Corners -->
+          <svg class="ornament corner-top-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-top-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          
+          <div class="details-layout">
+            <div class="font-label">Together with their families</div>
+            <div class="font-script gold-foil" id="card-names">
+              Priya &<br>Rahul
+            </div>
+            <div class="font-event-title">Request the honor of your presence<br>at their celebration</div>
+            
+            <svg class="center-divider" viewBox="0 0 200 20"><line x1="0" y1="10" x2="80" y2="10" stroke="var(--accent)" stroke-width="1"/><circle cx="100" cy="10" r="4" stroke="var(--accent)" fill="none"/><circle cx="100" cy="10" r="1" fill="var(--accent)"/><line x1="120" y1="10" x2="200" y2="10" stroke="var(--accent)" stroke-width="1"/></svg>
+            
+            <div class="font-body uppercase" id="card-day">SATURDAY</div>
+            <div class="font-event-title" style="font-size: 28px;" id="card-date">14 June 2025</div>
+            <div class="font-body" id="card-time">Seven o'clock in the evening</div>
+
+            <div class="font-body mt-4 hidden" id="card-special-msg"></div>
+            <div class="font-body hidden" id="card-dress-code" style="font-style: italic;"></div>
+          </div>
+        </div>
+        <div class="page-back"></div>
+        <div class="page-shadow"></div>
+      </div>
+
+      <!-- PAGE 1 (Cover) -->
+      <div class="page" id="page-1" data-index="0">
+        <div class="page-front page-content cover-layout is-visible">
+          <div class="page-texture"></div>
+          <div class="glare"></div>
+          
+          <!-- Corners -->
+          <svg class="ornament corner-top-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-top-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-left" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+          <svg class="ornament corner-bottom-right" width="60" height="60" viewBox="0 0 60 60"><path d="M0 0v20c15 0 25 10 25 25h20C45 20 20 0 0 0z"/><path d="M5 5v12c10 0 18 8 18 18h12C35 15 15 5 5 5z"/></svg>
+
+          <!-- Borders -->
+          <svg class="border-band top" preserveAspectRatio="none" viewBox="0 0 400 24"><path d="M0,12 Q10,0 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/><path d="M0,12 Q10,24 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/></svg>
+          <svg class="border-band bottom" preserveAspectRatio="none" viewBox="0 0 400 24"><path d="M0,12 Q10,0 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/><path d="M0,12 Q10,24 20,12 T40,12 T60,12 T80,12 T100,12 T120,12 T140,12 T160,12 T180,12 T200,12 T220,12 T240,12 T260,12 T280,12 T300,12 T320,12 T340,12 T360,12 T380,12 T400,12" fill="none" stroke-width="1" stroke="var(--accent)"/></svg>
+
+          <div id="card-motif">
+             <!-- SVG inserted by JS, default below -->
+             <svg class="motif-icon" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+          </div>
+          
+          <div class="font-event-title">You are cordially invited</div>
+          
+          <div class="font-script gold-foil" id="card-host" style="font-size: clamp(48px, 10vw, 72px);">Sharma Family</div>
+          
+          <svg class="center-divider" viewBox="0 0 200 20"><line x1="0" y1="10" x2="80" y2="10" stroke="var(--accent)" stroke-width="1"/><circle cx="100" cy="10" r="4" stroke="var(--accent)" fill="none"/><circle cx="100" cy="10" r="1" fill="var(--accent)"/><line x1="120" y1="10" x2="200" y2="10" stroke="var(--accent)" stroke-width="1"/></svg>
+          
+          <div class="font-label" id="card-event-type">WEDDING INVITATION</div>
+          
+          <div class="hint-pulse font-label" style="letter-spacing: 2px;">tap to open &darr;</div>
+        </div>
+        <div class="page-back"></div>
+        <div class="page-shadow"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/js/card.js"></script>
+  <script src="/js/gestures.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
+</body>
+</html>

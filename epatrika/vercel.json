@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/i/:code", "destination": "/card.html" },
+    { "source": "/og/:code.png", "destination": "/api/og" }
+  ]
+}

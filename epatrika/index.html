@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ePatrika Creator</title>
+  <link rel="stylesheet" href="/styles/creator.css">
+</head>
+<body>
+  
+  <div class="creator-layout">
+    <!-- Left Column: Form -->
+    <main class="form-column">
+      <header class="header">
+        <h1>ePatrika</h1>
+        <p>Premium Indian Digital Invitations</p>
+      </header>
+
+      <div id="form-view">
+        <form id="creator-form">
+          
+          <!-- Theme Selection -->
+          <div class="form-panel">
+            <h2>Select Aesthetic</h2>
+            <div class="theme-picker" id="themeGroup">
+              <label class="theme-option theme-a">
+                <input type="radio" name="theme" value="ivory" checked>
+                <div class="swatch" title="Ivory Theme"></div>
+              </label>
+              <label class="theme-option theme-b">
+                <input type="radio" name="theme" value="midnight">
+                <div class="swatch" title="Midnight Theme"></div>
+              </label>
+              <label class="theme-option theme-c">
+                <input type="radio" name="theme" value="blush">
+                <div class="swatch" title="Blush Theme"></div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Who -->
+          <div class="form-panel">
+            <h2>The Hosts & The Couple</h2>
+            <div class="form-group">
+              <label for="hostName">Hosting Family</label>
+              <input type="text" id="hostName" name="hostName" placeholder='e.g. "Sharma Family" or "Priya & Rahul"' required>
+            </div>
+            
+            <div class="form-group">
+              <label>Event Type</label>
+              <div class="radio-group" id="eventTypeGroup">
+                <label class="radio-btn"><input type="radio" name="eventType" value="Wedding" checked><span>Wedding</span></label>
+                <label class="radio-btn"><input type="radio" name="eventType" value="Engagement"><span>Engagement</span></label>
+                <label class="radio-btn"><input type="radio" name="eventType" value="Housewarming"><span>Housewarming</span></label>
+                <label class="radio-btn"><input type="radio" name="eventType" value="Pooja"><span>Pooja</span></label>
+                <label class="radio-btn"><input type="radio" name="eventType" value="Birthday"><span>Birthday</span></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="names">Names of the Celebrants</label>
+              <input type="text" id="names" name="names" placeholder="e.g. Priya & Rahul" required>
+            </div>
+          </div>
+
+          <!-- When & Where -->
+          <div class="form-panel">
+            <h2>Time & Location</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+              <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="venueName">Venue Name</label>
+                <input type="text" id="venueName" name="venueName" placeholder="e.g. Raj Mahal Banquet Hall" required>
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="e.g. Andheri, Mumbai" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- RSVP & Details -->
+          <div class="form-panel">
+            <h2>RSVP & Details</h2>
+            <div class="form-group">
+              <label for="whatsapp">WhatsApp Number for RSVP</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+91 9876543210" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="dressCode">Dress Code (Optional)</label>
+              <input type="text" id="dressCode" name="dressCode" placeholder="e.g. Traditional Indian">
+            </div>
+
+            <div class="form-group">
+              <label for="specialMessage">Special Message (Optional)</label>
+              <textarea id="specialMessage" name="specialMessage" rows="2" placeholder="e.g. No boxed gifts please."></textarea>
+            </div>
+
+            <div class="form-group" style="margin-top: 1.5rem;">
+              <label style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="paymentRequired" name="paymentRequired" style="width: 20px; height: 20px;">
+                Enable Shagun / Gift via UPI
+              </label>
+              <input type="text" id="upiId" name="upiId" placeholder="e.g. name@okhdfcbank" style="display: none; margin-top: 10px;">
+            </div>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn-primary">Create Digital Card</button>
+        </form>
+      </div>
+      
+      <!-- Success View (Hidden by default) -->
+      <div id="success-view" class="hidden">
+        <div class="form-panel" style="text-align: center; padding: 40px 20px;">
+          <h2 style="font-size: 2rem; color: var(--primary);">Your Card is Ready!</h2>
+          <p style="margin-bottom: 2rem; color: var(--text-muted);">Share the magic with your guests.</p>
+          <button id="copyBtn" class="btn-primary" style="margin-bottom: 10px;">Copy Invite Link</button>
+          <button id="waBtn" class="btn-whatsapp">Share on WhatsApp</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Column: Live Preview -->
+    <aside class="preview-column">
+      <div class="preview-container">
+        <h3>Live Preview</h3>
+        <div class="mini-card" id="live-preview-card">
+          <svg class="mini-card-motif" id="preview-motif" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 50 L60 60 L50 100 L40 60 L0 50 L40 40 Z" fill="none"/></svg>
+          <div class="mini-card-invite">You are cordially invited</div>
+          <div class="mini-card-host" id="preview-host">Sharma Family</div>
+          <div style="width: 80%; height: 1px; background: currentColor; opacity: 0.3; margin: 15px 0;"></div>
+          <div class="mini-card-event" id="preview-event">WEDDING INVITATION</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  
+  <button class="mobile-preview-btn" id="mobilePreviewBtn">View Preview</button>
+  
+  <div class="mobile-preview-modal" id="mobilePreviewModal">
+    <div class="preview-container">
+      <h3 style="color: white; margin-bottom: 10px;">Live Preview</h3>
+      <!-- The JS will clone the mini-card here or we can just move it -->
+      <div id="mobile-preview-wrapper"></div>
+      <button class="close-modal-btn" id="closeModalBtn">X</button>
+    </div>
+  </div>
+
+  <script src="/js/creator.js"></script>
+</body>
+</html>

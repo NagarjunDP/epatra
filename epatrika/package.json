@@ -1,0 +1,15 @@
+{
+  "name": "shaadi-card",
+  "version": "1.0.0",
+  "description": "WhatsApp-First Indian Wedding Invitation PWA",
+  "main": "index.html",
+  "scripts": {},
+  "dependencies": {
+    "@vercel/kv": "^3.0.0",
+    "@vercel/og": "^0.6.4",
+    "nanoid": "^5.0.9"
+  },
+  "engines": {
+    "node": ">=20.x"
+  }
+}
